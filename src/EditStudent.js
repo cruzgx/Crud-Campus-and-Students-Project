@@ -42,14 +42,14 @@ class EditStudent extends Component {
         }
      
         //checks to see if user put in valid link
-        //console.log(this.isValidUrl(document.getElementById('urlInput').value))
-
         if(!this.isValidUrl(document.getElementById('urlInput').value)){
             alert("Invalid url input. Please input a valid url")
             return
         }
 
-        alert('Sucess Valid Link')
+        //cheks to see if GPA is Valid
+        //check if email is valid here
+
     }
 
     //Used to authenticate if is a string is a valid string.
