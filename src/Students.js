@@ -9,7 +9,12 @@ class Students extends React.Component{
     render(){
         return(
             <div>
-                <h1>Students</h1>
+                <h1>All Students</h1>
+                <p>There are no students registered in the database</p>
+                <form action="./AddStudent">
+                <input value="Add Student"type="submit"/>
+
+                </form>
             </div>
         )
     }

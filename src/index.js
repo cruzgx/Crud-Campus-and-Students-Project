@@ -6,6 +6,9 @@ import Campus from './Campus';
 import Home from './Home';
 import Students from './Students'
 import {BrowserRouter, Route, Link, Switch} from 'react-router-dom';
+import AddCampus from './AddCampus';
+import AddStudent from './AddStudent';
+import EditCampus from './EditCampus';
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -22,6 +25,9 @@ ReactDOM.render(
     <Route exact path="/" component={Home}></Route>
     <Route path="/Campus" component={Campus}></Route>
     <Route path="/Students" component={Students}/>
+    <Route path="/AddCampus" component={AddCampus}/>
+    <Route path="/AddStudent" component={AddStudent} />
+    <Route path="/EditCampus" component={EditCampus}/>
     </Switch>
     </div>
     </BrowserRouter>,
