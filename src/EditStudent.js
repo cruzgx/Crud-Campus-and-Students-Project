@@ -1,9 +1,8 @@
 import React, {Component} from 'react'
 
-//TESTING: Will add EditStudent to navbar to see output
-//will be removed after finishing testing out this page.
-
-//TODO: Include a redirect to single student view
+/*TODO: THIS SITE MUST Include a redirect to SINGLE STUDENT VIEW
+AND this site should be have to link to it from the ALL STUDENTS PAGE
+*/
 
 class EditStudent extends Component {
     constructor(props){
@@ -50,7 +49,7 @@ class EditStudent extends Component {
 
         //cheks to see if GPA is Valid
         const userGPA = document.getElementById('gpaInput').value
-        if(userGPA < 0 || userGPA > 4.0){
+        if(userGPA === '' || userGPA < 0 || userGPA > 4.0){
             alert("Invalid input. GPA must be from 0.0-4.0")
             return;
         }
@@ -63,8 +62,11 @@ class EditStudent extends Component {
         this.setState({gpa: document.getElementById('gpaInput').value})
         this.setState({isInputValid: true})
 
-        alert("Submission Sent")
+        
         //TODO: PASS THIS DATA TO DATABASE
+        //check 43:49 of video time stamp
+
+
     }
 
     //Used to authenticate if is a string is a valid string.
