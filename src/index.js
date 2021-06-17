@@ -10,6 +10,7 @@ import AddCampus from './AddCampus';
 import AddStudent from './AddStudent';
 import EditCampus from './EditCampus';
 import EditStudent from './EditStudent';
+import SingleStudentView from './SingleStudentView';
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -30,6 +31,8 @@ ReactDOM.render(
     <Route path="/AddStudent" component={AddStudent} />
     <Route path="/EditCampus" component={EditCampus}/>
     <Route path='/EditStudent' component={EditStudent} />
+
+    <Route path='/singleStudentView' component={SingleStudentView} />
     </Switch>
     </div>
     </BrowserRouter>,

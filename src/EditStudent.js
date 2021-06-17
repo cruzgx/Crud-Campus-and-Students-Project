@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import './styling/EditStudent.css'
 
 /*TODO: THIS SITE MUST Include a redirect to SINGLE STUDENT VIEW
 AND this site should be have to link to it from the ALL STUDENTS PAGE
@@ -82,19 +83,13 @@ class EditStudent extends Component {
 
     render(){
         return(
-            <div>
-                <h1>Edit Student</h1>
-                <p>Are you a former student or faculty who needs to 
+            <div className='test-me'>
+                <h1 className='edit-student-heading'>Edit Student Information</h1>
+                <p className='edit-student-blurb'>Are you a former student or faculty who needs to 
                     our records? You can do so here.
                 </p>
 
-                <p>Remove when done: <br></br>
-                    Student first name can't be blank <br></br>
-                    Last name can't be blank <br></br>
-                    email must be valid and can't be null <br></br>
-                    imageURL - must have a default value <br></br>
-                    GPA must be between 0.0 and 4.0 <br></br>                   
-                </p>
+
                 <br></br>
                 <label>First Name:</label>
                 <input id="firstNameInput"></input> <br></br>
