@@ -14,6 +14,7 @@ class EditStudent extends Component {
             firstName: "",
             lastName: "",
             email: "",
+            url: "",
             gpa: -1,
             isInputValid: false
         }
@@ -23,13 +24,13 @@ class EditStudent extends Component {
     handleButtonSubmit(){
         
         //checks if first name is empty
-        if(document.getElementById('firstNameInput').value == ''){
+        if(document.getElementById('firstNameInput').value === ''){
             alert("Cannot input a empty name for first name")
             return
         }
 
         //checks if last name is empty
-        if(document.getElementById('lastNameInput').value == ''){
+        if(document.getElementById('lastNameInput').value === ''){
             alert("Cannot input a empty name for last name")
             return
         }
@@ -41,15 +42,29 @@ class EditStudent extends Component {
             return
         }
      
-        //checks to see if user put in valid link
+        //checks to see if user put in valid URL
         if(!this.isValidUrl(document.getElementById('urlInput').value)){
             alert("Invalid url input. Please input a valid url")
             return
         }
 
         //cheks to see if GPA is Valid
-        //check if email is valid here
+        const userGPA = document.getElementById('gpaInput').value
+        if(userGPA < 0 || userGPA > 4.0){
+            alert("Invalid input. GPA must be from 0.0-4.0")
+            return;
+        }
 
+        //we can now safely pass on the valid data 
+        this.setState({firstName: document.getElementById('firstNameInput').value})
+        this.setState({lastName: document.getElementById('lastNameInput').value})
+        this.setState({email: document.getElementById('emailInput').value})
+        this.setState({url: document.getElementById('urlInput').value})
+        this.setState({gpa: document.getElementById('gpaInput').value})
+        this.setState({isInputValid: true})
+
+        alert("Submission Sent")
+        //TODO: PASS THIS DATA TO DATABASE
     }
 
     //Used to authenticate if is a string is a valid string.
