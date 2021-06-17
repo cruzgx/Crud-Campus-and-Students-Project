@@ -7,11 +7,45 @@
 .edit-student-heading {
     text-align: center;
     font-size: 270%;
+    padding-top: 5%;
 }
 .edit-student-blurb {
     text-align: center;
     font-size: 110%;
 }
 
+#edit-student-form{
+    text-align: center;
+}
 
+#edit-student-form-wrapper {
+    display: inline-block;
+}
+
+.editStudent-inputs {
+    display: block;
+    text-align: center;
+    line-height: 150%;
+    font-size: .85em;
+    border: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #f2f2f2;
+    padding: 12px;
+    border-radius: 3px;
+    width: 250px;
+    outline: none;
+}
+
+
+#editStudent-submit-button{
+    border: 1px solid #1d367c;
+    background: none; 
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
+}
 

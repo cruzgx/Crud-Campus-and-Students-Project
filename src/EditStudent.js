@@ -66,7 +66,7 @@ class EditStudent extends Component {
         
         //TODO: PASS THIS DATA TO DATABASE
         //check 43:49 of video time stamp
-
+        alert("Sucessfully Submitted Form")
 
     }
 
@@ -91,24 +91,30 @@ class EditStudent extends Component {
 
 
                 <br></br>
+                <div id='edit-student-form'>
+                <form id='edit-student-form-wrapper'>
                 <label>First Name:</label>
-                <input id="firstNameInput"></input> <br></br>
+                <input id="firstNameInput" className='editStudent-inputs'></input> <br></br>
             
                 <label>Last Name:</label>
-                <input id='lastNameInput'></input> <br></br>
+                <input id='lastNameInput' className='editStudent-inputs'></input> <br></br>
 
                 <label>Email:</label>
-                <input id='emailInput'></input> <br></br>
+                <input id='emailInput' className='editStudent-inputs'></input> <br></br>
 
                 <label>Update your image (URL):</label>
-                <input id='urlInput'></input><br></br>
+                <input id='urlInput' className='editStudent-inputs'></input><br></br>
 
                 <label>Enter you GPA (0.0 to 4.0)</label>
-                <input type='number' min='0.0' max='4.0' step='.1' id='gpaInput'></input>
+                <input type='number' min='0.0' max='4.0' step='.1' id='gpaInput' className='editStudent-inputs'></input>
+                </form>
                 <br></br>
                 <br></br>
 
-                <button onClick={this.handleButtonSubmit}>Submitt</button>                
+                <button id='editStudent-submit-button'  onClick={this.handleButtonSubmit}>Submitt</button> 
+                <small></small>
+                </div>
+
             </div>
         )
     }
