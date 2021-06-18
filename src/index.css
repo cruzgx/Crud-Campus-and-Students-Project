@@ -5,9 +5,51 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#campus-card{
+  width: 400px;
+  box-shadow: 1px 1px 3px #000;
+  /* margin-left: 550px; */
+  margin-right: 10px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  text-align: center;
+  display: inline-block;
+  flex-direction: row;
+  margin-left: 30px;
+  background-color: white;
+
+}
+
+.college-img{
+  width: 50%;
+}
+
+#add-campus{
+  border: 1px solid #1d367c;
+    background: none; 
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
+    margin-bottom: 30px;
+    margin-left: 1300px;
+    background-color: white;
+}
+
+#campus-page{
+    background-color: bisque;
+  padding-bottom: 150px;
+}
+
+#all-campus{
+ padding-top: 10px;
 }
