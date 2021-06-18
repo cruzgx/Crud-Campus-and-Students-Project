@@ -30,17 +30,22 @@ class SingleStudentView extends Component{
            {this.state.gpa == null ? <p className='ssview-gpa'>(GPA = unknown)</p> : <p className='ssview-gpa'>{this.state.gpa}</p>} 
 
            <br></br>
-           <button>edit</button><button>delete</button>
+           <button className='ssview-editbuttons' id='ssview-deletebutton'>delete</button><button className='ssview-editbuttons' id='ssview-editbutton'>edit</button>
 
-            {this.state.isRegisteredAtACampus == null ? <p>This student is not registered to a campus</p>
-            : <p>This student isn't registered to a campus</p>}
+            {this.state.isRegisteredAtACampus == null ? <p className='ssview-isRegistered'>This student is not registered to a campus</p>
+            : <p className='ssview-isRegistered'>This student isn't registered to a campus</p>}
 
             {/* Should check if campusaffiliation is the value
             we would pass for [NOT AFFILIATED TO ANY CAMPUS] */}
-            {this.state.studentCampusAffiliation == null ? <p>Not affiliated with any campus.</p>
-            : <p>{this.studentCampusAffiliation}</p>}
+            {this.state.studentCampusAffiliation == null ? <p className='ssview-ssview-affiliation'>Not affiliated with any campus.</p>
+            : <p className='ssview-ssview-affiliation'>{this.studentCampusAffiliation}</p>}
 
             <p>Campus Selector</p>
+            <label>Select campus</label>
+            <form>
+                {/* implement me */}
+            </form>
+
             <button>Change button</button>
        </div>)
     }
