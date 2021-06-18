@@ -30,7 +30,7 @@ class SingleStudentView extends Component{
            {this.state.gpa == null ? <p className='ssview-gpa'>(GPA = unknown)</p> : <p className='ssview-gpa'>{this.state.gpa}</p>} 
 
            <br></br>
-           <button>edit</button><button>delete</button>
+           <button className='ssview-editbuttons' id='ssview-deletebutton'>delete</button><button className='ssview-editbuttons' id='ssview-editbutton'>edit</button>
 
             {this.state.isRegisteredAtACampus == null ? <p>This student is not registered to a campus</p>
             : <p>This student isn't registered to a campus</p>}

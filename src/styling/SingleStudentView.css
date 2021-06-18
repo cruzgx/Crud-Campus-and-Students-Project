@@ -7,16 +7,48 @@
     float: left;
     padding-left: 5%;
     padding-top: 3%;
+    height: 35%;
+    width: 35%;
 }
 
 .single-student-view-studentName {
     text-align:end;
     float: right;
+    padding-right: 25%;
+    padding-top: 5%;
+    height: auto;
+    font-size: 140%;
 }
 
 .ssview-gpa {
-   /* 
-   TO DO: IMPLEMENT ME
    
-   clear: both; This fixes left and right  */
+   /* clear: both; This fixes left and right  */
+   padding-top: 11%;
+   float: right;
+  
+}
+
+
+.ssview-editbuttons {
+    float: right;
+    padding-right: 40%;
+    border: 1px solid #1d367c;
+    background: none; 
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
+    padding-top: 10%;
+    margin-top: 10%;
+    margin-right: 2%;
+    padding: 10px 40px;
+}
+
+
+#ssview-deletebutton {
+    background: red;
+}
+
+#ssview-editbutton {
+    background: green;
 }
