@@ -52,3 +52,16 @@
 #ssview-editbutton {
     background: green;
 }
+
+.ssview-isRegistered {
+    clear: both;
+    padding-top: 7%;
+    padding-left: 5%;
+    font-size: 140%;
+}
+
+
+.ssview-ssview-affiliation{
+    padding-left: 5%;
+    font-size: 100%;
+}
