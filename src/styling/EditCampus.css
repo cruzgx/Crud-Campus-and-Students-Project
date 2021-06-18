@@ -1,0 +1,56 @@
+#campus-header{
+  background-color: #F08080;
+  padding-bottom: 150px;
+}
+
+.campus-input{
+  display: block;
+  text-align: center;
+  line-height: 150%;
+  font-size: .85em;
+  border: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #f2f2f2;
+  padding: 12px;
+  border-radius: 3px;
+  width: 250px;
+  outline: none;
+}
+#edit-campus{
+  display: inline-block;
+  margin-left: 580px;
+}
+
+#submitbutton-campus{
+  border: 1px solid #1d367c;
+  background: none; 
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+p, h1{
+  text-align: center;
+}
+
+#edit-campus{
+
+  text-align: center;
+  padding: 20px;
+  
+  
+}
+
+
+#button-campus{
+  margin-top: 20px;
+}
+
+
+input{
+  margin: 20px;
+}
