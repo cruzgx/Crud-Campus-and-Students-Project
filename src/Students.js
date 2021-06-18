@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 class Students extends React.Component{
     constructor(props){
@@ -15,6 +16,9 @@ class Students extends React.Component{
                 <input value="Add Student"type="submit"/>
 
                 </form>
+                <Link to='/singleStudentView'>
+                    <button>Click here to go to single student page</button>
+                </Link>
             </div>
         )
     }

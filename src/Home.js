@@ -28,7 +28,7 @@ class Home extends React.Component{
                     </Link>
   
                     <p>Click below to be redirected to a single campus view</p>
-                    <Link to='/Campus'>
+                    <Link to='/SingleCampusView'>
                         <button type='button' className='button'>Single Campus View </button>
                     </Link>
        
