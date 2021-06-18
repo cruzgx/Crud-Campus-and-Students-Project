@@ -8,7 +8,7 @@
 
 /* The image here is found in src/images/banner */
 .header {
-    min-height: 100vh;
+    min-height: 100vh; 
     width: 100;
     background-image: linear-gradient(rgba(4,10,30,0.7),
     rgba(4,10,30,0.7)),url('./images/banner.png');

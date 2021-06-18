@@ -1,0 +1,22 @@
+.singlle-student-view-container {
+    background: bisque;
+    height:100vh;
+}
+
+.single-student-image {
+    float: left;
+    padding-left: 5%;
+    padding-top: 3%;
+}
+
+.single-student-view-studentName {
+    text-align:end;
+    float: right;
+}
+
+.ssview-gpa {
+   /* 
+   TO DO: IMPLEMENT ME
+   
+   clear: both; This fixes left and right  */
+}
