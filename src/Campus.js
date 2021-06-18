@@ -46,6 +46,10 @@ class Campus extends React.Component {
           <input id="add-campus" value="Add Campuses" type="submit" />
         </form>
 
+        <form action="./SingleCampusView">
+          <input id="add-campus" value="View Single Campus" type="submit" />
+        </form>
+
         {CAMPUSES.map((val, index) => (
           <div id="campus-card">
             <div key={index}>
