@@ -37,10 +37,10 @@ class EditCampus extends React.Component {
 
     //checks to see if user put in valid URL
     let url = document.getElementById("campusImg").value;
-    if (!this.isValidUrl(url)) {
-      alert("Invalid url input. Please input a valid url");
-      return;
-    }
+    // if (!this.isValidUrl(url)) {
+    //   alert("Invalid url input. Please input a valid url");
+    //   return;
+    // }
 
     let description = document.getElementById("campusDescript").value;
     if (description == "") {

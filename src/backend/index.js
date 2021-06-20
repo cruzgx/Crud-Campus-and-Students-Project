@@ -22,12 +22,13 @@ const pool = new Pool({
 
 
 app.post('/campusEdit', (req,res) => {
+    
     const cName = req.body.campusName;
     const loca = req.body.campusLocation;
     const img = req.body.campusImg;
     const describe = req.body.campusDescript;
      pool.query(
-         "INSERT INTO campus (\"campusName\", \"campusLocation\", \"campusUrl\", \"campusDescription\") VALUES ($1,$2,$3,$4)",
+         "INSERT INTO campus (\"campusName\", \"campusLocation\", \"campusUrl\", \"campusDescription\") VALUES ($1,$2,$3,$4,)",
          [cName, loca, img, describe],
          (err,result) =>{
              if(err){
@@ -40,7 +41,7 @@ app.post('/campusEdit', (req,res) => {
     
     
     // console.log(req);
-    // console.log("We are getting info from front end");
+    console.log("We are getting info from front end");
     // response.send("The campus has been sent.")
 });
 
@@ -54,6 +55,7 @@ app.get("/getCampus", (req,res) =>{
 
 
 app.post('/addStudents', (req,res)=>{
+    
     const fname = req.body.studentFirstName;
     const lname = req.body.studentLastName;
     const email = req.body.studentEmail;
@@ -74,20 +76,29 @@ app.post('/addStudents', (req,res)=>{
     )
 });
 
-// app.delete('/deleteCampus/:id', (req,res)=>{
-//     const id = req.params.id;
-//     console.log(id);
-//     pool.query(
-//         `DELETE FROM campus WHERE  id  = ${id}`,[id] ,  (err , result)=>{
-//             if(err){
-//                 console.log(err.message)
-//             }else{
-//                 res.send(result);
-//                 console.log("data deleted")
-//             }
+app.delete('/deleteCampus/:id', (req,res)=>{
+    const id = req.params.id;
+    console.log(id);
+    pool.query(
+        "DELETE FROM campus WHERE \"id\" = $1",
+        [id] ,  
+        (err , result)=>{
+            if(err){
+                console.log(err.message)
+                console.log("this is our error message");
+            }else{
+                res.send(result);
+                console.log("data deleted")
+            }
 
-//         }
-//     )
+        }
+    )
+})
+
+// app.put('/updateCampus', (req,res) =>{
+//     const id = req.body.id;
+//     pool.query(
+//         "UPDATE SET campus  ")
 // })
 
 

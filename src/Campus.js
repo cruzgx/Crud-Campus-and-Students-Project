@@ -55,29 +55,37 @@ class Campus extends React.Component {
       });
   };
 
-  // deleteData = (e, id) => {
-  //   e.preventDefault();
-  //   axios.delete(`/deleteCampus/${id}`).then((response) => {
-  //     this.setState({
-  //       posts: response.data.rows,
-  //     });
-  //     this.state.posts.filter((val) => {
-  //       return val.id != id;
-  //     });
-  //   });
-  // };
+  deleteData = (e, id) => {
+    e.preventDefault();
+    console.log("delete");
+    axios.delete(`/deleteCampus/${id}`).then((response) => {
+      // this.setState({
+      //   posts: response.data.rows,
+
+      // });
+      let filter = this.state.posts.filter((val) => {
+        return val.id != id;
+      })
+      this.setState({
+        posts: filter
+    });
+      console.log(this.state.posts)
+    });
+  };
 
   render() {
     let display = [];
-    display = this.state.posts.map((val, key) => {
+    display = this.state.posts.map((post, key) => {
       return (
         <div id="campus-card">
-        <h3>{val.id}</h3>
-          <h3>Campus Name: {val.campusName}</h3>
-          <h3>Location: {val.campusLocation}</h3>
-          <h3>Image: {val.campusUrl}</h3>
-          <h3>Description: {val.campusDescription}</h3>
-          {/* <button onClick={this.deleteData }>Delete</button> */}
+          <img src={post.campusUrl}></img>
+          {/* <h3>{post.id}</h3> */}
+          <h3>Campus Name: {post.campusName}</h3>
+          <h3>Location: {post.campusLocation}</h3>
+
+          <h3>Description: {post.campusDescription}</h3>
+          <button>Edit</button>
+          <button onClick={(e)=> this.deleteData(e,post.id)}>Delete</button>
         </div>
       );
     });
@@ -89,11 +97,11 @@ class Campus extends React.Component {
         <form action="./AddCampus">
           <input id="add-campus" value="Add Campuses" type="submit" />
         </form>
-
+        <button id="add-campus"onClick={this.displayData}>Display data</button>
         <form action="./SingleCampusView">
           <input id="add-campus" value="View Single Campus" type="submit" />
         </form>
-
+        
         {CAMPUSES.map((val, index) => (
           <div id="campus-card">
             <div key={index}>
@@ -105,7 +113,7 @@ class Campus extends React.Component {
             </div>
           </div>
         ))}
-        <button onClick={this.displayData}>Display data</button>
+        
         <div>{display}</div>
       </div>
     );
