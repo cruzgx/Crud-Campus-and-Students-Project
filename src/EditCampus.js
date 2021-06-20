@@ -1,6 +1,6 @@
 import React from "react";
 import "./styling/EditCampus.css";
-import axios from 'axios'
+import axios from "axios";
 
 class EditCampus extends React.Component {
   constructor(props) {
@@ -9,19 +9,16 @@ class EditCampus extends React.Component {
       campusName: "",
       campusLocation: "",
       campusImg: "",
-      campusDescript: ""
+      campusDescript: "",
+      posts: [],
     };
     this.handleCampusChange = this.handleCampusChange.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    
   }
 
-
-  handleChange(e){
-    this.setState({[e.target.name]: e.target.value});
-
-}
-  
+  handleChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
+  }
 
   handleCampusChange(e) {
     e.preventDefault();
@@ -50,12 +47,16 @@ class EditCampus extends React.Component {
       alert("Cannot leave empty!");
     }
 
-    console.log(cm, loc, url,description);
+    console.log(cm, loc, url, description);
 
-    this.setState({campusName: document.getElementById("campusName").value });
-    this.setState({campusLocation: document.getElementById("campusLoc").value,});
-    this.setState({campusImg: document.getElementById("campusImg").value });
-    this.setState({campusDescript: document.getElementById("campusDescript").value,});
+    this.setState({ campusName: document.getElementById("campusName").value });
+    this.setState({
+      campusLocation: document.getElementById("campusLoc").value,
+    });
+    this.setState({ campusImg: document.getElementById("campusImg").value });
+    this.setState({
+      campusDescript: document.getElementById("campusDescript").value,
+    });
 
     this.setState({ isInputValid: true });
 
@@ -67,30 +68,47 @@ class EditCampus extends React.Component {
     //    body: JSON.stringify(values),
     //    header: {
     //        'content-Type': 'application/json'
-    //    } 
+    //    }
     // }).then(res => res.json())
     // .then(data => console.log(data))
     // .catch(err => console.log(err));
 
-
-
     (async () => {
-        //console.log(values);
-        const rawResponse = await fetch('/campusEdit', {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-             'Content-type': 'application/json'
-          },
-          body: JSON.stringify(values)
-        });
-        const content = await rawResponse.json();
+      //console.log(values);
+      const rawResponse = await fetch("/campusEdit", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+      const content = await rawResponse.json();
 
-        console.log(content);
-      })();
+      console.log(content);
+    })();
 
     alert("campus has been submitted");
   }
+
+
+  // componentDidUpdate(){
+  //   this.displayData();
+  // }
+  displayData = (e) => {
+    e.preventDefault();
+    axios
+      .get("/getCampus")
+      .then((response) => {
+       this.setState({ 
+           posts : response.data.rows
+          })
+        console.log("Data received");
+      })
+      .catch(() => {
+        alert("Error");
+      });
+  };
 
   isValidUrl(str) {
     var pattern = new RegExp(
@@ -106,6 +124,19 @@ class EditCampus extends React.Component {
   }
 
   render() {
+    let display = [];
+    display= this.state.posts.map((val,key) =>{
+      return <div>
+      <h3>{val.campusName}</h3>
+      <h3>{val.campusLocation}</h3>
+      <h3>{val.campusUrl}</h3>
+      <h3>{val.campusDescription}</h3>
+      
+      </div>
+    })
+
+
+
     return (
       <div id="campus-header">
         <h1>Edit Campus:</h1>
@@ -120,7 +151,6 @@ class EditCampus extends React.Component {
             className="campus-input"
             value={this.state.campusName}
             onChange={this.handleChange}
-            
           />
           <br></br>
 
@@ -133,7 +163,6 @@ class EditCampus extends React.Component {
             className="campus-input"
             value={this.state.campusLocation}
             onChange={this.handleChange}
-            
           />
           <br></br>
 
@@ -146,7 +175,6 @@ class EditCampus extends React.Component {
             className="campus-input"
             value={this.state.campusImg}
             onChange={this.handleChange}
-            
           />
           <br></br>
 
@@ -159,13 +187,19 @@ class EditCampus extends React.Component {
             className="campus-input"
             value={this.state.campusDescript}
             onChange={this.handleChange}
-            
           ></input>
           <br></br>
 
           <button id="submitbutton-campus" onClick={this.handleCampusChange}>
             Submit
           </button>
+          <br></br>
+          <button onClick={this.displayData} action="./Campus">show data</button>
+          {/* <form action="./Campus">
+          <input id="" value="View Campuses" type="submit" /> */}
+          {display}
+        {/* </form> */}
+          
         </form>
       </div>
     );

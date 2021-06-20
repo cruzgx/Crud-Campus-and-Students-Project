@@ -2,9 +2,14 @@ const { response } = require('express');
 let express = require('express');
 let app = express();
 let {Pool} = require('pg');
+let bodyParser = require('body-parser');
+let cors = require('cors');
 
 
-// app.use(express.urlencoded({ extended: true }));
+
+app.use(cors());
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 const pool = new Pool({
@@ -39,6 +44,14 @@ app.post('/campusEdit', (req,res) => {
     // response.send("The campus has been sent.")
 });
 
+app.get("/getCampus", (req,res) =>{
+    const all = "SELECT * FROM campus";
+    pool.query(all, (err, result) =>{
+        res.send(result);
+    })
+})
+
+
 
 app.post('/addStudents', (req,res)=>{
     const fname = req.body.studentFirstName;
@@ -59,7 +72,23 @@ app.post('/addStudents', (req,res)=>{
             }
         }
     )
-})
+});
+
+// app.delete('/deleteCampus/:id', (req,res)=>{
+//     const id = req.params.id;
+//     console.log(id);
+//     pool.query(
+//         `DELETE FROM campus WHERE  id  = ${id}`,[id] ,  (err , result)=>{
+//             if(err){
+//                 console.log(err.message)
+//             }else{
+//                 res.send(result);
+//                 console.log("data deleted")
+//             }
+
+//         }
+//     )
+// })
 
 
 
