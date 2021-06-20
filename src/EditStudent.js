@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import './styling/EditStudent.css'
+import Axios from 'axios'
+
 
 /*TODO: THIS SITE MUST Include a redirect to SINGLE STUDENT VIEW
 AND this site should be have to link to it from the ALL STUDENTS PAGE
@@ -16,6 +18,7 @@ class EditStudent extends Component {
             email: "",
             url: "",
             gpa: -1,
+            id: -1,
             isInputValid: false
         }
         this.handleButtonSubmit = this.handleButtonSubmit.bind(this)
@@ -61,13 +64,43 @@ class EditStudent extends Component {
         this.setState({email: document.getElementById('emailInput').value})
         this.setState({url: document.getElementById('urlInput').value})
         this.setState({gpa: document.getElementById('gpaInput').value})
+        this.setState({id: document.getElementById('editStudent-id').value})
         this.setState({isInputValid: true})
 
         
-        //TODO: PASS THIS DATA TO DATABASE
-        //check 43:49 of video time stamp
-        alert("Sucessfully Submitted Form")
+        //TODO: Edit database in backend.
+        //.put is for updates 
+        /*
+        Axios.put('http://localhost:5000/updateStudentInfo', {
+            firstname: this.state.firstname,
+            lastname: this.state.lastname,
+            email: this.state.email,
+            url: this.state.url,
+            gpa: this.state.gpa,
+            id: 
+        })
+        */
+        let values = this.state
 
+            
+            fetch('http://localhost:5000/updateStudentInfo', {
+              method: 'PUT',
+              headers: {
+                'Accept': 'application/json',
+                 'Content-type': 'application/json'
+              },
+              body: JSON.stringify(values)
+            });
+            
+    
+            
+
+        alert("Sucessfully Submitted Form")
+        
+
+
+        //Here we edit the student data.
+        
     }
 
     //Used to authenticate if is a string is a valid string.
@@ -107,6 +140,9 @@ class EditStudent extends Component {
 
                         <label>Enter you GPA (0.0 to 4.0)</label>
                         <input type='number' min='0.0' max='4.0' step='.1' id='gpaInput' className='editStudent-inputs'></input>
+
+                        <label>Enter your id number</label>
+                        <input id='editStudent-id' type='number'></input>
                     </form>
                     <br></br>
                     <br></br>

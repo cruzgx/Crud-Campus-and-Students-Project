@@ -54,7 +54,7 @@ class AddStudent extends React.Component{
           })();
     
 
-
+          alert('Sucess, Added student to database')
 
 
         //DATA CAN NOW BE PASSED TO DATABASE FROM HERE.
