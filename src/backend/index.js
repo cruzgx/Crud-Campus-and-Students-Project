@@ -21,14 +21,14 @@ const pool = new Pool({
 });
 
 
-app.post('/campusEdit', (req,res) => {
+app.post('/addCampus', (req,res) => {
     
     const cName = req.body.campusName;
     const loca = req.body.campusLocation;
     const img = req.body.campusImg;
     const describe = req.body.campusDescript;
      pool.query(
-         "INSERT INTO campus (\"campusName\", \"campusLocation\", \"campusUrl\", \"campusDescription\") VALUES ($1,$2,$3,$4,)",
+         "INSERT INTO campus (campusname, campuslocation, campusurl, campusdescription) VALUES ($1,$2,$3,$4)",
          [cName, loca, img, describe],
          (err,result) =>{
              if(err){
@@ -97,9 +97,51 @@ app.delete('/deleteCampus/:id', (req,res)=>{
 
 // app.put('/updateCampus', (req,res) =>{
 //     const id = req.body.id;
+//     const name = req.body.campusName;
+//     const loca = req.body.campusLocation;
+//     const img = req.body.campusImg;
+//     const describe= req.body.campusDescript;
 //     pool.query(
-//         "UPDATE SET campus  ")
+//         "UPDATE SET campus campusName= $1, campusLocation= $2, campusUrl=$3, campusDescription=$4 WHERE id= $5"),
+//         [name,loca,img,describe,id],
+//         (err,result)=>{
+//             if(err){
+//                 console.log(err);
+//             }
+//             else{
+//                 res.send(result);
+//             }
+//         }
 // })
+
+app.put('/updateCampus', (req, res) => {
+    const id = req.body.id;
+    const name = req.body.campusName;
+     const loca = req.body.campusLocation;
+    const img = req.body.campusImg;
+   const describe= req.body.campusDescript;
+    //get items from front end.
+    // const firstname = req.body.firstName
+    // const lastname = req.body.lastName
+    // const email = req.body.email
+    // const url = req.body.url
+    // const gpa = req.body.gpa 
+    // const id = req.body.id //this field would have to be added to our inputs in front-end
+
+    // let text =  'UPDATE student SET firstname = $1, lastname = $2, email = $3, image = $4, gpa = $5 WHERE id = $6'
+     let text= "UPDATE SET campus campusname= $1, campuslocation= $2, campusurl=$3, campusdescription=$4 WHERE id= $5"
+    
+    const values = [name, loca, img, describe, id]
+
+    pool.query(text, values, (err, result) => {
+        if(err){
+            console.log(err)
+        }
+        else{
+            res.send(result)
+        }
+    })
+})
 
 
 

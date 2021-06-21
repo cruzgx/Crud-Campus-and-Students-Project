@@ -13,6 +13,7 @@ import EditStudent from './EditStudent';
 import SingleStudentView from './SingleStudentView';
 import SingleCampusView from './SingleCampusView';
 import './styling/Navbar.css';
+import AddingCampus from './AddingCampus'
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -35,7 +36,7 @@ ReactDOM.render(
     <Route path="/EditCampus" component={EditCampus}/>
     <Route path='/EditStudent' component={EditStudent} />
     <Route path='/SingleCampusView' component={SingleCampusView}/>
-
+    <Route path='/AddingCampus' component={AddingCampus}/>
     <Route path='/singleStudentView' component={SingleStudentView} />
     </Switch>
     </div>
