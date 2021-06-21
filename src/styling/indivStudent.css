@@ -1,0 +1,15 @@
+.indivStudent-component {
+    width: 400px;
+  box-shadow: 1px 1px 3px #000;
+  /* margin-left: 550px; */
+  margin-right: 10px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  text-align: center;
+  display: inline-block;
+  flex-direction: row;
+  margin-left: 30px;
+  background-color: white;
+
+}

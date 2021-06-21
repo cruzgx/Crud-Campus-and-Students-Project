@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import IndividualStudent from './individualStudent';
+import './styling/students.css'
 //import e from 'express';
 //import { response } from 'express';
 //import { response } from 'express';
@@ -56,9 +57,9 @@ render(){
     console.log(items)
 
     return (
-        <div>
+        <div className='all-students-page'>
             <h1>All Students</h1>
-            <button onClick={this.handleGetStudentsRequest}>Show students</button>
+            <button onClick={this.handleGetStudentsRequest} className='button'>Show students</button>
             
             <form action="./AddStudent">
                 <input value="Add Student" type="submit" />
@@ -66,7 +67,7 @@ render(){
             </form>
             {items}
             <Link to='/singleStudentView'>
-                <button>Click here to go to single student page</button>
+                <button className='button'>Click here to go to single student page / edit student</button>
             </Link>
         </div>
     )

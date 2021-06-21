@@ -1,5 +1,6 @@
 import React from 'react'
 import {Component} from 'react'
+import './styling/indivStudent.css'
 
 class IndividualStudent extends Component {
     constructor(props){
@@ -14,20 +15,18 @@ class IndividualStudent extends Component {
             studentGPA: props.studentGPA
         }
         */
-       
+
         //bind functions here.
     }
 
 
     render(){
         return(
-            <div>
-                <p>I return student data</p>
-                <p>{this.props.studentFirstName}</p>
-                <p>{this.props.studentLastName}</p>
+            <div class='indivStudent-component'>
+                <img src={this.props.studentImgURL} width="200" height="200" /><br></br>
+                <b>{this.props.studentFirstName} {this.props.studentLastName}</b>                
                 <p>{this.props.studentEmail}</p>
-                <p>{this.props.studentImgURL}</p>
-                <p>{this.props.studentGPA}</p>
+                <p>GPA: {this.props.studentGPA}</p>
             </div>
         )
     }

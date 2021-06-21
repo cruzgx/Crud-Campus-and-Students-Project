@@ -72,6 +72,7 @@ class AddStudent extends React.Component{
         return(
             <div>
                 <h1> New Student Form: </h1>
+                <div className='editStudent-inputs'>
                     <label>Enter students first name</label>
                     <input id='addStudent-firstName' onChange={this.handleChange}/> <br></br>
                     <label>Enter students last name</label>
@@ -83,6 +84,7 @@ class AddStudent extends React.Component{
                     <label>Enter GPA</label>
                     <input id='addStudent-GPA' onChange={this.handleChange}/> <br></br>
                     <button onClick={this.handleSubmit}>Submit</button>
+                </div>
             </div>
         )
     }
