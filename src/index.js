@@ -12,16 +12,19 @@ import EditCampus from './EditCampus';
 import EditStudent from './EditStudent';
 import SingleStudentView from './SingleStudentView';
 import SingleCampusView from './SingleCampusView';
+import './styling/Navbar.css';
+import AddingCampus from './AddingCampus'
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <BrowserRouter>
-  <div>
-  <ul>
-    <li><Link to ="/">Home</Link></li>
-    <li><Link to ="/Campus">Campus</Link></li>
-    <li><Link to ="/Students">Students</Link></li>
-  </ul>
+  <div >
+  <div id="nav-bar">
+  
+    <Link to ="/" className="links">Home</Link>
+    <Link to ="/Campus" className="links">Campus</Link>
+    <Link to ="/Students" className="links">Students</Link>
+    </div>
 
   
   <Switch>
@@ -33,7 +36,7 @@ ReactDOM.render(
     <Route path="/EditCampus" component={EditCampus}/>
     <Route path='/EditStudent' component={EditStudent} />
     <Route path='/SingleCampusView' component={SingleCampusView}/>
-
+    <Route path='/AddingCampus' component={AddingCampus}/>
     <Route path='/singleStudentView' component={SingleStudentView} />
     </Switch>
     </div>

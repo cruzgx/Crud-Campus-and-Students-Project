@@ -1,6 +1,7 @@
 #campus-header{
-  background-color: #F08080;
+  background-color: bisque;
   padding-bottom: 150px;
+  padding-top: 2px;
 }
 
 .campus-input{
@@ -53,4 +54,8 @@ p, h1{
 
 input{
   margin: 20px;
+}
+
+label{
+  text-align: center;
 }

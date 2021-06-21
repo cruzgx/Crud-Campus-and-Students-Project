@@ -2,7 +2,7 @@ import React from "react";
 import "./styling/EditCampus.css";
 import axios from "axios";
 
-class EditCampus extends React.Component {
+class AddingCampus extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -63,22 +63,6 @@ class EditCampus extends React.Component {
     let values = this.state;
     console.log(values);
 
-
-    fetch('http://localhost:5000/updateCampus', {
-              method: 'PUT',
-              headers: {
-                'Accept': 'application/json',
-                 'Content-type': 'application/json'
-              },
-              body: JSON.stringify(values)
-            });
-            
-    
-            
-
-        alert("Sucessfully Submitted Form")
-        
-
     // fetch('/campusEdit', {
     //    method: 'POST',
     //    body: JSON.stringify(values),
@@ -124,7 +108,7 @@ class EditCampus extends React.Component {
       .catch(() => {
         alert("Error");
       });
-  }
+  };
 
   isValidUrl(str) {
     var pattern = new RegExp(
@@ -155,7 +139,7 @@ class EditCampus extends React.Component {
 
     return (
       <div id="campus-header">
-        <h1>Edit Campus:</h1>
+        <h1>Add Campus:</h1>
         <p>Add any College/University</p>
         <form id="edit-campus">
           <label>Campus Name:</label>
@@ -205,10 +189,6 @@ class EditCampus extends React.Component {
             onChange={this.handleChange}
           ></input>
           <br></br>
-          <label>Enter your id number</label>
-          <br></br>
-          <input  type='number'></input>
-          <br></br>
 
           <button id="submitbutton-campus" onClick={this.handleCampusChange}>
             Submit
@@ -226,4 +206,4 @@ class EditCampus extends React.Component {
   }
 }
 
-export default EditCampus;
+export default AddingCampus;
