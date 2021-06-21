@@ -46,10 +46,10 @@ class EditStudent extends Component {
         }
      
         //checks to see if user put in valid URL
-        if(!this.isValidUrl(document.getElementById('urlInput').value)){
-            alert("Invalid url input. Please input a valid url")
-            return
-        }
+        // if(!this.isValidUrl(document.getElementById('urlInput').value)){
+        //     alert("Invalid url input. Please input a valid url")
+        //     return
+        // }
 
         //cheks to see if GPA is Valid
         const userGPA = document.getElementById('gpaInput').value

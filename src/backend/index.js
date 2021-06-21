@@ -4,7 +4,7 @@ let app = express();
 const cors = require('cors');
 let {Pool} = require('pg');
 let bodyParser = require('body-parser');
-let cors = require('cors');
+// let cors = require('cors');
 
 
 
@@ -14,10 +14,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 const pool = new Pool({
-    user:"cruzgonzalez",
+    user:"postgres",
     host:"localhost",
-    database:"student_data",
-    password:"Password",
+    database:"campusDatabase",
+    password:"Lessie",
     port:"5432",
 });
 

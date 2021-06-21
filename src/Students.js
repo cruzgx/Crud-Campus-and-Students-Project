@@ -65,10 +65,12 @@ render(){
                 <input value="Add Student" type="submit" />
 
             </form>
-            {items}
-            <Link to='/singleStudentView'>
-                <button className='button'>Click here to go to single student page / edit student</button>
+            
+            <Link to='/EditStudent'>
+                <button className='button'> Edit Student</button>
             </Link>
+            <br></br>
+            {items}
         </div>
     )
 }
